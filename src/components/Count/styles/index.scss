@@ -1,0 +1,136 @@
+@import "../../../scss/variables.scss";
+
+.countArea {
+  display: flex;
+  height: 30%;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: $bgCol3;
+  box-shadow: $boxShadow;
+
+  .left {
+    min-width: 51%;
+    display: grid;
+    grid-template-areas: "heading countVal countBtns";
+    place-items: center;
+    gap: 1.2rem;
+    color: white;
+
+    h2 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      grid-area: heading;
+    }
+
+    .count {
+      grid-area: countVal;
+      padding: 1rem;
+      background-color: $bgCol2;
+      box-shadow: 3px 5px 2px rgb(0 0 0 / 0.4);
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    .countHandlerBtns {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      grid-area: countBtns;
+      transition: transform 0.15s;
+      .icon {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+        font-size: 3rem;
+        background-color: $white;
+        border-radius: 4px;
+        cursor: pointer;
+        svg {
+          color: $bgCol3;
+          filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+        }
+
+        &:hover {
+          transform: scale(1.05);
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          transform: translateY(2px);
+        }
+      }
+
+      @media (max-width: 740px) {
+        flex-direction: row;
+      }
+    }
+
+    @media (max-width: 520px) {
+      grid-template-areas: "heading heading" "countVal countBtns";
+    }
+  }
+
+  .right {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    min-width: 49%;
+
+    .button {
+      align-items: center;
+      appearance: none;
+      background-color: #fcfcfd;
+      border-radius: 4px;
+      border-width: 0;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+      box-sizing: border-box;
+      // color: #36395a;
+      color: $bgCol3;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      overflow: hidden;
+      padding: 0 1.6rem;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      transition: box-shadow 0.15s, transform 0.15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      will-change: box-shadow, transform;
+      font-size: 1.8rem;
+
+      &:focus {
+        box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+      }
+
+      &:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        box-shadow: #d6d6e7 0 3px 7px inset;
+        transform: translateY(2px);
+      }
+    }
+  }
+
+  @media (max-width: 740px) {
+    // height: 30%;
+    flex-direction: column;
+  }
+}
